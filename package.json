@@ -19,7 +19,7 @@
 		"@astrojs/partytown": "2.1.4",
 		"@astrojs/rss": "4.0.15",
 		"@astrojs/sitemap": "3.7.0",
-		"astro": "5.16.11",
+		"astro": "5.18.1",
 		"astro-icon": "1.1.5",
 		"daisyui": "5.5.14",
 		"tailwindcss": "4.1.18",
