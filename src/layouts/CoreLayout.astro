@@ -58,6 +58,8 @@ const layoutTitle = `${title} :: ${SITE_TITLE} | ${SITE_DESCRIPTION}`;
     <script type="text/partytown" is:inline>
       var _paq = window._paq = window._paq || [];
       /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(["setCookieDomain", "*.drolx.com"]);
       _paq.push(['trackPageView']);
       _paq.push(['enableLinkTracking']);
       (function() {
@@ -67,7 +69,9 @@ const layoutTitle = `${title} :: ${SITE_TITLE} | ${SITE_DESCRIPTION}`;
         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
         g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
       })();
-    </script>)}
+    </script>
+    <noscript><p><img referrerpolicy="no-referrer-when-downgrade" src="//analytics.drolx.com/matomo.php?idsite=1&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+    )}
     <!--
     <script type="text/partytown" is:inline async src={'https://www.googletagmanager.com/gtag/js?id=G-TV4J9YCNL0'}></script>
     <script type="text/partytown" is:inline define:vars={{ tagId, tagManagerId }}>
