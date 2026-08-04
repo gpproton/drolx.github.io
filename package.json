@@ -24,7 +24,7 @@
 		"daisyui": "5.7.15",
 		"tailwindcss": "4.3.3",
 		"tw-to-css": "0.0.12",
-		"typescript": "7.0.2"
+		"typescript": "6.0.3"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.5.6",
