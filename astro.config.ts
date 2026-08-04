@@ -46,21 +46,20 @@ export default defineConfig({
       },
     }),
     matomo({
-      enabled: import.meta.env.PROD,
+      enabled: true,
       partytown: true,
       host: "https://analytics.drolx.com/",
       setCookieDomain: "*.drolx.com",
-      trackerUrl: "js/",
-      srcUrl: "js/",
       siteId: 1,
+      preconnect: true,
       heartBeatTimer: 5,
       disableCookies: true,
-      preInitCommands: [["requireCookieConsent"]],
       debug: false,
-      viewTransition: {
-        contentElement: "main",
-        deleteCustomDimensions: []
-      }
+      viewTransition: true,
+      // trackerUrl: "js/",
+      // srcUrl: "js/",
+      // customSrcUrl: "/js/matomo.js"
+      // preInitCommands: [["requireCookieConsent"]],
     }),
   ],
 });
