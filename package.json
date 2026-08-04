@@ -21,6 +21,7 @@
 		"@astrojs/sitemap": "3.7.3",
 		"astro": "7.1.6",
 		"astro-icon": "1.1.5",
+		"astro-matomo": "^1.12.0",
 		"daisyui": "5.7.15",
 		"tailwindcss": "4.3.3",
 		"tw-to-css": "0.0.12",

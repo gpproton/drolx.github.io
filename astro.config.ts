@@ -21,6 +21,7 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 import icon from "astro-icon";
+import matomo from 'astro-matomo';
 import { SITE_URL } from "./src/consts";
 
 export default defineConfig({
@@ -43,6 +44,23 @@ export default defineConfig({
         debug: false,
         forward: ["dataLayer.push"],
       },
+    }),
+    matomo({
+      enabled: import.meta.env.PROD,
+      partytown: true,
+      host: "https://analytics.drolx.com/",
+      setCookieDomain: "*.drolx.com",
+      trackerUrl: "js/",
+      srcUrl: "js/",
+      siteId: 1,
+      heartBeatTimer: 5,
+      disableCookies: true,
+      preInitCommands: [["requireCookieConsent"]],
+      debug: false,
+      viewTransition: {
+        contentElement: "main",
+        deleteCustomDimensions: []
+      }
     }),
   ],
 });
