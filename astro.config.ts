@@ -53,9 +53,9 @@ export default defineConfig({
       siteId: 1,
       preconnect: true,
       heartBeatTimer: 5,
-      disableCookies: true,
       debug: false,
       viewTransition: true,
+      // disableCookies: true,
       // trackerUrl: "js/",
       // srcUrl: "js/",
       // customSrcUrl: "/js/matomo.js"
