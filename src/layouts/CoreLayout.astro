@@ -55,6 +55,20 @@ const layoutTitle = `${title} :: ${SITE_TITLE} | ${SITE_DESCRIPTION}`;
 
     <!-- Analytics scripts -->
     {isProduction && (
+    <script type="text/partytown" is:inline>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//analytics.drolx.com/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>)}
+    <!--
     <script type="text/partytown" is:inline async src={'https://www.googletagmanager.com/gtag/js?id=G-TV4J9YCNL0'}></script>
     <script type="text/partytown" is:inline define:vars={{ tagId, tagManagerId }}>
         // Google Tag Manager
@@ -70,17 +84,7 @@ const layoutTitle = `${title} :: ${SITE_TITLE} | ${SITE_DESCRIPTION}`;
           f.parentNode.insertBefore(j, f);
         })(window, document, "script", "dataLayer", "GTM-TDRZ8NRG");
     </script>
-    <script type="text/partytown" is:inline>
-      (function() {
-        var el = document.createElement("script");
-        el.src = "https://analytics.drolx.com/api/script.js";
-        el.defer = true;
-        el.setAttribute("data-site-id", "1");
-        el.setAttribute("data-track-errors", "true");
-        el.setAttribute("data-session-replay", "true");
-        document.head.appendChild(el);
-      })();
-    </script>)}
+    -->
     </head>
   <body class:list={[
 		  clazz,
@@ -89,7 +93,7 @@ const layoutTitle = `${title} :: ${SITE_TITLE} | ${SITE_DESCRIPTION}`;
 	    'dark:scrollbar-track-gray-900 dark:scrollbar-thumb-gray-700',
   ]}>
     <!-- Google Tag Manager (noscript) -->
-    {isProduction && (
+    <!-- {isProduction && (
     <noscript>
       <iframe
         src={'https://www.googletagmanager.com/ns.html?id=GTM-TDRZ8NRG'}
@@ -99,8 +103,7 @@ const layoutTitle = `${title} :: ${SITE_TITLE} | ${SITE_DESCRIPTION}`;
       >
       </iframe>
     </noscript>
-    )}
+    )} -->
     <slot />
   </body>
 </html>
-<style is:global></style>
